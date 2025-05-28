@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalisador – Seu Infoproduto Pronto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+    .container {
+      max-width: 1355px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .hero {
+      background-color: #ff7043;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.2em;
+    }
+    .hero p {
+      font-size: 1.1em;
+    }
+    .section {
+      margin-bottom: 60px;
+    }
+    .offer {
+      background-color: white;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      padding: 30px;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .offer:hover {
+      transform: scale(1.03);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    }
+    .highlight {
+      border: 2px solid #ff7043;
+    }
+    .offer h3 {
+      color: #ff7043;
+    }
+    .offer .btn {
+      display: block;
+      margin: 20px auto 0;
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .btn {
+      font-size: 1rem;
+      padding: 12px 24px;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.5em;
+      }
+      .hero p {
+        font-size: 0.95em;
+      }
+      .btn {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 14px 20px;
+        margin-top: 10px;
+      }
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- conteúdo omitido para brevidade -->
+
+<script type="rocketlazyloadscript">
+// lista de plataformas
+var platforms = ["hotmart", "kiwify"];
+var queryString = window.location.search;
+var utmParams = {};
+queryString.substr(1).split("&").forEach(function(item) {
+  var param = item.split("=");
+  if (param[0].startsWith("utm_")) {
+    utmParams[param[0]] = param[1];
+  }
+});
+if (Object.keys(utmParams).length === 0) {
+  var referrer = document.referrer;
+  if (referrer) {
+    var domain = new URL(referrer).hostname;
+    utmParams["utm_source"] = domain;
+    utmParams["utm_medium"] = "Referencia";
+  }
+}
+var utmString = Object.keys(utmParams).map(function(key) {
+  return key.substr(4) + "=" + utmParams[key];
+}).join("|");
+var links = document.getElementsByTagName("a");
+for (var i = 0; i < links.length; i++) {
+  for (var j = 0; j < platforms.length; j++) {
+    if (links[i].href.indexOf(platforms[j]) !== -1) {
+      var linkUrl = new URL(links[i].href);
+      var oldHref = links[i].href;
+      for (var param in utmParams) {
+        linkUrl.searchParams.set(param, utmParams[param]);
+      }
+      linkUrl.searchParams.set("sck", utmString);
+      links[i].href = decodeURI(linkUrl.toString());
+      console.log("Antes: " + oldHref);
+      console.log("Depois: " + links[i].href);
+      if (links[i].href.indexOf("?") === -1) {
+        links[i].href += "?";
+      } else {
+        links[i].href += "&";
+      }
+      break;
+    }
+  }
+}
+</script>
+
+</body>
+</html>
