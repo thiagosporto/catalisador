@@ -2,287 +2,137 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Catalisador – Seu Infoproduto Pronto</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalisador - Crie seu infoproduto em minutos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #f8f9fa;
-      color: #212529;
-    }
-    .container {
-      max-width: 960px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    .hero {
-      background-color: #ff7043;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.2em;
-    }
-    .hero p {
-      font-size: 1.1em;
-    }
-    .section {
-      margin-bottom: 60px;
-    }
-    .offer {
-      background-color: white;
-      border: 1px solid #dee2e6;
-      border-radius: 0.5rem;
-      padding: 30px;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
-    }
-    .highlight {
-      border: 2px solid #ff7043;
-    }
-    .offer h3 {
-      color: #ff7043;
-    }
-    .offer .btn {
-      display: block;
-      margin: 20px auto 0;
-    }
-    .icon {
-      color: #ff7043;
-      margin-right: 8px;
-    }
-    .fade-in {
-      animation: fadeIn 1.2s ease-in;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .btn {
-      font-size: 1rem;
-      padding: 12px 24px;
-    }
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.5em;
-      }
-      .hero p {
-        font-size: 0.95em;
-      }
-      .btn {
-        width: 100%;
-        font-size: 1.1rem;
-        padding: 14px 20px;
-        margin-top: 10px;
-      }
-    }
-    footer {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-    }
-    .offer:hover {
-    transform: scale(1.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-  }
-</style>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WZ9G72HJ');</script>
-<!-- End Google Tag Manager -->  
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.5; background-color: #fff; color: #222; }
+    header, section { padding: 40px 20px; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .hero { text-align: center; background-color: #f4f4f4; padding: 60px 20px; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+    .price { font-size: 2rem; color: #1e8f3f; margin-bottom: 20px; }
+    .btn { display: inline-block; padding: 15px 30px; background-color: #1e8f3f; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s ease; }
+    .btn:hover { background-color: #166d30; }
+    .section-title { font-size: 1.8rem; margin-bottom: 20px; text-align: center; }
+    .comparison, .faq, .sobre { margin-top: 40px; }
+    .comparison-table { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+    .plan { border: 2px solid #ccc; border-radius: 10px; padding: 20px; flex: 1 1 280px; text-align: center; }
+    .plan h3 { margin-bottom: 10px; font-size: 1.3rem; }
+    .plan .plan-price { font-size: 1.6rem; color: #1e8f3f; margin-bottom: 10px; }
+    .plan ul { list-style: none; padding: 0; font-size: 1rem; margin-bottom: 15px; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item h4 { margin-bottom: 5px; color: #1e8f3f; }
+    footer { background: #f4f4f4; padding: 20px; text-align: center; font-size: 0.9rem; }
+    p { margin-bottom: 15px; }
+  </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ9G72HJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
-<header class="hero fade-in">
-  <h1>Crie seu Infoproduto Completo em Poucos Minutos</h1>
-  <p>Sem depender de ideias mirabolantes. Sem perder dias com páginas, conteúdo ou campanhas.</p>
-</header>
+  <header class="hero">
+    <div class="container">
+      <h1>Crie seu Infoproduto Completo em Minutos</h1>
+      <p>Com o Catalisador, você acessa uma estrutura pronta + IA + materiais prontos para vender ainda hoje.</p>
+      <div class="price">A partir de R$48</div>
+      <a href="#planos" class="btn">Quero Começar Agora</a>
+    </div>
+  </header>
 
-<main class="container my-5">
+  <section class="sobre container">
+    <p>Imagina ter, em mãos, um mapa prático, que te mostra exatamente o que fazer — e quando fazer — pra transformar o seu conhecimento em um negócio digital lucrativo, com base, estrutura e consistência.</p>
+    <p><strong>Esse é o Catalisador.</strong></p>
+    <p>Um sistema de aceleração. Desenhado pra quem está travado… Pra quem tem ideias demais e execução de menos. Ou até mesmo pra quem já começou, mas sente que está patinando — sempre ocupado, mas sem resultado proporcional.</p>
+    <p><strong>Então o que ele entrega, de verdade?</strong></p>
+    <p>👉 Clareza sobre o que fazer.<br>👉 Direção pra onde ir.<br>👉 E principalmente: resultado prático e mensurável.</p>
+    <p>Porque o foco é: tirar você do modo “consumo” e te colocar no modo “execução”.</p>
+    <p>E ele faz isso por etapas. Cada uma pensada pra resolver um problema específico — sempre em ordem, sempre com propósito.</p>
 
- <section class="section fade-in">
-    <p>Eu tinha ideias. Muitas, até.</p>
-    <p>Mas na hora de montar… eu travava.</p>
-    <p>Ficava ali, parado, olhando pra tela, tentando adivinhar por onde começar.</p>
-    <p>Começava pelo nome? Pelo conteúdo? Pelo formato?</p>
-    <p>Nada parecia encaixar direito. E quanto mais eu pensava, mais confuso ficava.</p>
-    <p>Foi aí que eu percebi: o que faltava não era mais informação.</p>
-    <p>Era alguém — ou algo — que me ajudasse a organizar.</p>
-    <p>Que me conduzisse. Que colocasse a mão na massa comigo.</p>
+    <h3>Etapa 1: Posicionamento Estratégico</h3>
+    <p>É onde você define sua comunicação, seu posicionamento e o seu diferencial real. Aqui você constrói uma base sólida pra que seu conteúdo e seus produtos comecem a fazer sentido pra quem importa.</p>
+
+    <h3>Etapa 2: Estrutura de Produtos</h3>
+    <p>No Catalisador, você aprende a montar um ecossistema enxuto, com ofertas complementares. Tudo pensado pra resolver problemas reais, com soluções práticas. Produtos com começo, meio e fim. E com entrega que faz sentido no digital de hoje: simples, direta, eficiente.</p>
+
+    <h3>Etapa 3: Conteúdo com Propósito</h3>
+    <p>Sem fórmulas batidas. Sem dancinhas. Sem frases prontas que ninguém acredita mais. Você aprende a criar conteúdos que vendem — mesmo sem falar de vendas. Você entende como atrair, reter e converter com textos, vídeos, carrosséis, stories… Não é sobre quantidade, é sobre direção.</p>
+    <p>E o melhor: com roteiros prontos, estruturas replicáveis e toda a lógica por trás de cada formato. Porque conteúdo é mais do que likes. É um vendedor silencioso, trabalhando por você todos os dias, mesmo quando você não está postando.</p>
+
+    <h3>Etapa 4: Processos de Venda</h3>
+    <p>Aqui você tem três caminhos possíveis, dependendo do seu momento e da sua preferência:</p>
+    <ul>
+      <li><strong>1. Estrutura em HTML</strong><br>Uma página simples, leve, funcional. Com copy pensada pra converter. Sem enrolação, direto ao ponto, funcionando 24h por dia.</li>
+      <li><strong>2. Conversas 1x1</strong><br>Se você prefere algo mais pessoal, pode vender direto no direct ou WhatsApp. Aqui você aprende a conduzir conversas com leveza e estratégia — sem parecer vendedor e sem ser invasivo.</li>
+      <li><strong>3. Link direto pro checkout</strong><br>Quer algo mais automático? Você pode usar um link direto pro seu checkout e deixar que o conteúdo, o contexto e a copy façam o trabalho de convencimento.</li>
+    </ul>
+    <p>O ponto aqui é: você tem controle sobre o processo. Não precisa de lançamentos mirabolantes, nem de um time gigantesco. Você escolhe o formato, valida, e começa a escalar.</p>
+
+    <p><strong>No fim do processo, o que o Catalisador faz é simples:</strong></p>
+    <ul>
+      <li>📍 Organiza suas ideias</li>
+      <li>📍 Estrutura suas ofertas</li>
+      <li>📍 Alinha seu conteúdo com seu produto</li>
+      <li>📍 E cria um processo de venda leve e contínuo</li>
+    </ul>
+    <p>Tudo com foco em fazer você sair do papel e entrar em ação.</p>
+    <p><strong>É por isso que ele se chama Catalisador:</strong><br>Porque ele acelera o que já existe aí dentro de você. Sem fórmulas mágicas. Mas com método, clareza e execução real.</p>
   </section>
-  
-  <div class="text-center mb-5">
-    <img src="https://thiagosporto.github.io/catalisador/catalisador.png" alt="Catalisador" class="img-fluid" style="width:100%; max-width: 380px;">
-  </div>
-  
-  <section class="section fade-in">
-    <p>E foi assim que nasceu o <strong>Catalisador</strong>.</p>
-    <p>Não como mais um método, nem mais um curso…</p>
-    <p>Mas como um parceiro. Um agente que conversa comigo, entende o que eu quero criar — e estrutura tudo de forma simples, rápida e com clareza.</p>
-    <p>❌ Sem enrolação.</p>
-    <p>📉 Sem depender de técnicas que você ainda nem entende.</p>
-    <p>🎯 Apenas com foco no que importa: criar algo que você pode vender logo.</p>
-    <p>🔥 Foi por isso que nasceu o Catalisador.</p>
 
-    <p><strong>Antes:</strong> Ideias soltas, dúvida sobre por onde começar, medo de perder tempo e não vender.</p>
-    <p><strong>Depois:</strong> Produto pronto, com estrutura profissional, em poucas horas. Roteiros, páginas e campanhas que vendem. Mesmo que você nunca tenha feito isso antes.</p>
+  <section class="container" style="text-align:center; margin-top:40px;">
+    <img src="https://thiagosporto.github.io/catalisador/catalisador.png" alt="Mockup do Catalisador" style="max-width:100%; height:auto; border-radius:8px;">
+  </section>
 
-    <ul>
-      <li>⏳ Economize semanas de tentativa e erro</li>
-      <li>🛠️ Estrutura completa, pronta pra vender</li>
-      <li>📄 Conteúdo, copy, bônus, criativos e campanha</li>
-      <li>🕑 Tudo pode ser feito com 2h por dia</li>
-      <li>✨ Zero dependência técnica: você só responde e executa</li>
-    </ul>
+  <section class="container" style="margin-top:40px; text-align:center;">
+    <h2 class="section-title">Garantia de Satisfação</h2>
+    <p>
+      Se por qualquer motivo você sentir que o Catalisador não foi útil pra você nos primeiros <strong>7 dias</strong>, basta enviar um e‑mail e devolvemos <strong>100% do seu investimento</strong>. Sem burocracia.
+    </p>
+  </section>
 
-    <p><strong>🌟 O Catalisador é o único Agente de IA</strong> que conversa com você e entrega o seu infoproduto inteiro, com copy profissional, campanhas validadas e criativos prontos pra rodar. Tudo isso com linguagem simples, leve, sem precisar virar especialista. <strong>Você replica e cria quantos produtos quiser!</strong></p>
-
-    <p>🔒 Você não precisa entender de tráfego, design ou copy. Só precisa de vontade de começar e 2h por dia no máximo. O Catalisador cuida do resto.</p>
-  <p>💰 Montar a estrutura completa de um infoproduto como essa, com profissionais do mercado, custaria no mínimo:</p>
-    
-    <ul>
-      <li>✍️ Copywriter Profissional: R$ 1.500</li>
-      <li>🎨 Designer para a página e PDF: R$ 800</li>
-      <li>📈 Gestor de Tráfego para campanha inicial: R$ 1.200</li>
-      <li>🧠 Consultoria para estruturação: R$ 1.500</li>
-    </ul>
-    <p><strong>Total aproximado: R$ 5.000+</strong></p>
-    <p>💡 Com o <strong>Catalisador</strong>, você acessa tudo isso por uma fração desse valor.</p>
-    
-    <p><strong>Escolha a melhor opção para você:</strong></p>
-    
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="offer h-100">
-          <h3>💼 Catalisador (R$48)</h3>
-          <p>Você recebe:</p>
-          <ul>
-            <li>🖥️ Aulas práticas de como utilizar o Catalisador</li>
-            <li>🔗 Link de acesso ao Agente Catalisador</li>
-            <li>📘 Catalisador: Do Zero ao Produto em Minutos (PDF)</li>
-            <li>📘 Planner Interativo (PDF)</li>
-          </ul>
-          <a href="https://pay.hotmart.com/O100033614R?checkoutMode=10&off=iorb0i5z" target="_blank" class="btn btn-outline-primary">Quero essa versão</a>
-        </div>
+  <section id="planos" class="comparison container">
+    <h2 class="section-title">Escolha seu plano</h2>
+    <div class="comparison-table">
+      <div class="plan">
+        <h3>Versão Básica</h3>
+        <div class="plan-price">R$48</div>
+        <ul>
+          <li>✔ PDF + Planner</li>
+          <li>✔ Acesso ao Agente IA</li>
+        </ul>
+        <a href="#" class="btn">Quero a Básica</a>
       </div>
-      <div class="col-md-6 mb-4">
-        <div class="offer highlight h-100">
-          <h3>🚀 Catalisador Premium (R$88)</h3>
-          <p>Você recebe tudo da versão Catalisador, mais:</p>
-          <ul>
-            <li>🖥️ Aulas práticas de como criar seu site com GitHub Pages</li>
-            <li>🤝 Acesso à <strong>Caverna</strong> – grupo exclusivo no WhatsApp para suporte e networking</li>
-          </ul>
-          <a href="https://pay.hotmart.com/O100033614R?checkoutMode=10&off=r8o6l2c4" target="_blank" class="btn btn-primary">Quero o pacote completo</a>
-        </div>
+      <div class="plan">
+        <h3>Versão Premium</h3>
+        <div class="plan-price">R$88</div>
+        <ul>
+          <li>✔ Tudo da versão básica</li>
+          <li>✔ Aulas práticas exclusivas</li>
+          <li>✔ Suporte via WhatsApp</li>
+          <li>✔ Grupo de Networking</li>
+        </ul>
+        <a href="#" class="btn">Quero a Premium</a>
       </div>
     </div>
   </section>
 
-  <section class="section fade-in">
-    <h2 class="mt-5">🔘 Garantia de Satisfação</h2>
-    <p>Se por qualquer motivo você sentir que o Catalisador não foi útil pra você nos primeiros 7 dias, basta enviar um e-mail e devolvemos 100% do seu investimento. Sem burocracia.</p>
-
-    <h2 class="mt-5">📌 Perguntas Frequentes (FAQ)</h2>
-    <ul>
-      <li><strong>Preciso ter experiência?</strong> Não. O Catalisador foi feito especialmente pra quem está começando.</li>
-      <li><strong>Preciso instalar algo?</strong> Não. Tudo acontece direto no navegador.</li>
-      <li><strong>Funciona em celular?</strong> Sim, mas o uso ideal é no computador para melhor visualização.</li>
-      <li><strong>Posso usar mais de uma vez?</strong> Sim! Você pode criar quantos produtos quiser.</li>
-    </ul>
-
-    <h2 class="mt-5">
-    <div class="text-center">
-      <a href="https://pay.hotmart.com/O100033614R?checkoutMode=10&off=r8o6l2c4" target="_blank" class="btn btn-lg btn-success mt-4">Quero Criar Meu Produto Agora com o Catalisador 🚀</a>
+  <section class="faq container">
+    <h2 class="section-title">Dúvidas Frequentes</h2>
+    <div class="faq-item">
+      <h4>Funciona mesmo para iniciantes?</h4>
+      <p>Sim! O Catalisador foi criado para ajudar quem está começando do zero, sem experiência com produtos digitais.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Preciso saber sobre copy, design ou tráfego?</h4>
+      <p>Não. Você vai seguir uma estrutura simples, com apoio do agente de IA e modelos prontos.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Qual a diferença da versão Premium?</h4>
+      <p>Ela inclui aulas práticas, suporte individual e acesso a uma comunidade para troca de experiências e crescimento.</p>
     </div>
   </section>
-</main>
 
-<footer>
-    <p class="mt-3" style="font-size: 0.9em; line-height: 1.5;">
-    Este site não faz parte e nem é endossado pelo Google ou Facebook em qualquer aspecto. Google, Facebook e Instagram são marcas comerciais com todos os direitos reservados.<br>
-    Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho de uma estratégia não deve ser interpretada como uma garantia de resultados.<br><br>
-    TWR Soluções em TI · CNPJ: 12.548.784/0001-69 | Endereço: Rua Franklin, 210 Porto Alegre/RS, 91210-060<br>
-    Copyright © Thiago Porto · Termos de uso · Política﻿ de Privacidade · Aviso Legal
-  </p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script type="rocketlazyloadscript">
-// lista de plataformas
-var platforms = ["hotmart", "kiwify"];
-
-// obter a query string atual
-var queryString = window.location.search;
-
-// extrair todos os parâmetros de utm da query string
-var utmParams = {};
-queryString.substr(1).split("&").forEach(function(item) {
-  var param = item.split("=");
-  if (param[0].startsWith("utm_")) {
-    utmParams[param[0]] = param[1];
-  }
-});
-
-// verificar se não há parâmetros de utm na query string e adicionar utm_source e utm_medium usando o referenciador
-if (Object.keys(utmParams).length === 0) {
-  var referrer = document.referrer;
-  if (referrer) {
-    var domain = new URL(referrer).hostname;
-    utmParams["utm_source"] = domain;
-    utmParams["utm_medium"] = "Referencia";
-  }
-}
-
-// criar uma string com todas as utms separadas por "|"
-var utmString = Object.keys(utmParams)
-  .map(function(key) {
-    return key.substr(4) + "=" + utmParams[key];
-  })
-  .join("|");
-
-// encontrar todos os links que contenham uma das plataformas na lista
-var links = document.getElementsByTagName("a");
-for (var i = 0; i < links.length; i++) {
-  for (var j = 0; j < platforms.length; j++) {
-    if (links[i].href.indexOf(platforms[j]) !== -1) {
-      // adicionar as utms da query string ao href do link
-      var linkUrl = new URL(links[i].href);
-      var oldHref = links[i].href;
-      for (var param in utmParams) {
-        linkUrl.searchParams.set(param, utmParams[param]);
-      }
-
-      // adicionar a string de utms separadas por "|" ao href
-      linkUrl.searchParams.set("sck", utmString);
-
-      // decodificar o link antes de adicioná-lo ao href
-      links[i].href = decodeURI(linkUrl.toString());
-
-      // exibir as URLs antigas e atualizadas no console
-      console.log("Antes: " + oldHref);
-      console.log("Depois: " + links[i].href);
-
-      // adicionar o "?" ou "&" dependendo se já existe ou não uma query string
-      if (links[i].href.indexOf("?") === -1) {
-        links[i].href += "?";
-      } else {
-        links[i].href += "&";
-      }
-      break;
-    }
-  }
-}
-</script>
+  <footer>
+    &copy; 2025 Thiago Porto - Todos os direitos reservados. Catalisador é uma solução da Mentoria Fênix.
+  </footer>
 </body>
 </html>
